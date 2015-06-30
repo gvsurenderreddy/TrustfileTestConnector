@@ -1,2 +1,8 @@
-# TrustfileTestConnector
-Reference implementation of sample data sale/tax connector using the micro-service API for the Trustfile service.
+# PayPalConnector reference implementation
+
+* See [Micro-Service Overview](https://github.com/Avalara/TrustfileTestConnector/blob/master/MicroServiceOverview.md)
+* See [Micro-Service API definition](https://github.com/Avalara/TrustfileTestConnector/blob/master/MicroServiceAPI.md)
+* See [Trustfile API definition](https://github.com/Avalara/TrustfileTestConnector/blob/master/TrustfileAPI.md)
+ 
+
+ 
