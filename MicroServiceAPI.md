@@ -54,7 +54,7 @@ Sample Response:
 #### POST /datasource
 ```
 {	
-	"Company2TFToken": "123abc" 
+	"Company2TFToken": "123abc", 
 	"start_date": "5/1/2015"
 }
 ```
