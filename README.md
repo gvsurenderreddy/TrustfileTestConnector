@@ -1,4 +1,4 @@
-# PayPalConnector reference implementation
+# Trustfile Connector Micro-service reference implementation
 
 * See [Micro-Service Overview](https://github.com/Avalara/TrustfileTestConnector/blob/master/MicroServiceOverview.md)
 * See [Micro-Service API definition](https://github.com/Avalara/TrustfileTestConnector/blob/master/MicroServiceAPI.md)
