@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'connector', to: 'connectors#show', :defaults => { :format => 'json' }
+  put 'connector', to: 'connectors#update', :defaults => { :format => 'json' }
+  get 'connector/metrics', to: 'metrics#show', :defaults => { :format => 'json' }
+  get 'connector/errors', to: 'errors#show', :defaults => { :format => 'json' }
+  get 'orangez/health', to: 'health#show', :defaults => { :format => 'json' }
+  #get 'datasources', to: 'connectors#show', :defaults => { :format => 'json' }
+  resources :datasources, :defaults => { :format => 'json' }
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
