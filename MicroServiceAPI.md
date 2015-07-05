@@ -14,9 +14,11 @@ Authorization: Bearer <Connector2TFToken>
 
 //need to add access token doc
 
+?? TBD datasources vs datasource ???
+
 ### /datasource
 
-#### GET /datasource/:Company2TFToken
+#### GET /datasource/:company_2_tf_token
 
 Sample Response: 
 
