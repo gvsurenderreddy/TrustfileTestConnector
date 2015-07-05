@@ -11,17 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150704172553) do
+ActiveRecord::Schema.define(version: 20150705232113) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "connectors", force: :cascade do |t|
+    t.string   "name"
     t.boolean  "enabled",         default: true
     t.integer  "user_count",      default: 0
     t.datetime "last_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "metrics", force: :cascade do |t|
+    t.integer  "jobs_pending"
+    t.integer  "jobs_duration_min"
+    t.integer  "jobs_duration_max"
+    t.integer  "jobs_duration_avg"
+    t.integer  "hourly_synced_count"
+    t.integer  "daily_synced_count"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
 end

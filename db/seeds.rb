@@ -1,1 +1,1 @@
-Connector.create(name: 'Belgium', population: 10839905)
+Connector.create(name: 'Fake Connector',enabled: true, user_count: 0)

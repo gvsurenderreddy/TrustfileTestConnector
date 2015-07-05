@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  jobs_pending: 1
+  jobs_duration_min: 1
+  jobs_duration_max: 1
+  jobs_duration_avg: 1
+  hourly_synced_count: 1
+  daily_synced_count: 1
+
+two:
+  jobs_pending: 1
+  jobs_duration_min: 1
+  jobs_duration_max: 1
+  jobs_duration_avg: 1
+  hourly_synced_count: 1
+  daily_synced_count: 1
