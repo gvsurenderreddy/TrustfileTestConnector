@@ -1,23 +1,21 @@
 class ConnectorsController < ApplicationController
+  skip_before_filter :verify_authenticity_token, only: [:update]
   before_action :set_connector, only: [:show, :update]
 
-  # GET /connectors/1
-  # GET /connectors/1.json
+  # GET /connector
   def show
     respond_to do |format|
       format.json { render json: @show }
     end
   end
 
-  # PATCH/PUT /connectors/1
-  # PATCH/PUT /connectors/1.json
+  # PUT /connector
   def update
     respond_to do |format|
       if @connector.update(connector_params)
-        format.html { redirect_to @connector, notice: 'Connector was successfully updated.' }
-        format.json { render :show, status: :ok, location: @connector }
+        format.json { render json: {:enabled => @connector.enabled} }
+        # TODO stop sync'ing if disabled
       else
-        format.html { render :edit }
         format.json { render json: @connector.errors, status: :unprocessable_entity }
       end
     end
@@ -43,6 +41,6 @@ class ConnectorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def connector_params
-      params.require(:connector).permit(:enabled, :user_count, :last_updated_at)
+      params.require(:connector).permit(:enabled)
     end
 end
