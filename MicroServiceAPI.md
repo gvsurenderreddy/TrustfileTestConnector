@@ -12,11 +12,7 @@ Authorization: Bearer <Connector2TFToken>
 ```
 ## Micro-service API 
 
-//need to add access token doc
-
-?? TBD datasources vs datasource ???
-
-### /datasource
+### /datasources
 
 #### GET /datasource/:company_2_tf_token
 
