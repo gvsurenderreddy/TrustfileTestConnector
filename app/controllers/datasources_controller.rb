@@ -11,6 +11,8 @@ class DatasourcesController < ApplicationController
   end
 
   # GET /datasources/:company_2_tf_token/activities
+  # TODO default 2 weeks history to pull. Trustfile may request up to 1 year of activity logs.
+  # TODO parameters days=14&limit=1000
   def activities
     respond_to do |format|
       format.json { render json: {:activities => @datasource.activities} }
@@ -60,15 +62,16 @@ class DatasourcesController < ApplicationController
 
   # DELETE /datasources/:company_2_tf_token
   def destroy
-    @datasource.destroy
+    @datasource.destroy if @datasource
     respond_to do |format|
-      format.json { head :no_content }
+      format.json { head :no_content } if @datasource
+      format.json { render json: {"error" => "datasource not found"}, status: :unprocessable_entity } unless @datasource
     end
   end
 
   def authenticate
     respond_to do |format|
-        format.html { render json: @datasource.errors, status: :unprocessable_entity }
+        format.json { render json: @datasource.errors, status: :unprocessable_entity }
     end
   end
 
