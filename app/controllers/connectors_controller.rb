@@ -1,39 +1,11 @@
 class ConnectorsController < ApplicationController
-  before_action :set_connector, only: [:show, :edit, :update, :destroy]
-
-  # GET /connectors
-  # GET /connectors.json
-  def index
-    @connectors = Connector.all
-  end
+  before_action :set_connector, only: [:show, :update]
 
   # GET /connectors/1
   # GET /connectors/1.json
   def show
-  end
-
-  # GET /connectors/new
-  def new
-    @connector = Connector.new
-  end
-
-  # GET /connectors/1/edit
-  def edit
-  end
-
-  # POST /connectors
-  # POST /connectors.json
-  def create
-    @connector = Connector.new(connector_params)
-
     respond_to do |format|
-      if @connector.save
-        format.html { redirect_to @connector, notice: 'Connector was successfully created.' }
-        format.json { render :show, status: :created, location: @connector }
-      else
-        format.html { render :new }
-        format.json { render json: @connector.errors, status: :unprocessable_entity }
-      end
+      format.json { render json: @show }
     end
   end
 
@@ -51,20 +23,22 @@ class ConnectorsController < ApplicationController
     end
   end
 
-  # DELETE /connectors/1
-  # DELETE /connectors/1.json
-  def destroy
-    @connector.destroy
-    respond_to do |format|
-      format.html { redirect_to connectors_url, notice: 'Connector was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_connector
-      @connector = Connector.find(params[:id])
+      @connector = Connector.first
+
+      @show = {:enabled => @connector.enabled,
+               :user_count => @connector.user_count,
+               :last_updated_at => @connector.last_updated_at,
+               :metrics => {
+                 :jobs_pending => @connector.jobs_pending,
+                 :jobs_duration_min => @connector.jobs_duration_min,
+                 :jobs_duration_max => @connector.jobs_duration_max,
+                 :jobs_duration_avg => @connector.jobs_duration_avg,
+                 :hourly_synced_count => @connector.hourly_synced_count,
+                 :daily_synced_count => @connector.daily_synced_count
+                 }}
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

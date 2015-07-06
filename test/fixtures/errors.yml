@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  timestamp: 2015-07-05 16:57:05
+  message: MyString
+
+two:
+  type: 
+  timestamp: 2015-07-05 16:57:05
+  message: MyString

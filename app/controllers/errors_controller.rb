@@ -8,14 +8,17 @@ class ErrorsController < ApplicationController
   end
 
   private
-    # respond with errors from date=6/10/2015
+    # respond with errors from date
     # OR by default respond with errors from today
-    # TODO use errors table
-    def set_errors
-      @errors = {'errors' => [
-            { "type" => "INTEGRATION",
-              "timestamp" => "10/21/2015 08:00",
-              "message" => "request for token XYZ timed out" },
-          ]}
+      def set_errors
+      @errors = nil
+      begin
+        errors_after_date = Date.parse(params['date'])
+        @errors = Error.where("error_timestamp > ?", errors_after_date) if errors_after_date.is_a?(Date)
+        @errors = Error.where("error_timestamp > ?", Date.today) unless errors_after_date.is_a?(Date)
+      rescue
+        @errors = Error.where("error_timestamp > ?", Date.today) unless errors_after_date.is_a?(Date)
+      end
     end
+
 end

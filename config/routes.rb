@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   get 'connector', to: 'connectors#show', :defaults => { :format => 'json' }
   put 'connector', to: 'connectors#update', :defaults => { :format => 'json' }
-  get 'connector/metrics', to: 'metrics#show', :defaults => { :format => 'json' }
   get 'connector/errors', to: 'errors#show', :defaults => { :format => 'json' }
   get 'orangez/health', to: 'health#show', :defaults => { :format => 'json' }
   get 'datasources/:company_2_tf_token', to: 'connectors#show', :defaults => { :format => 'json' }

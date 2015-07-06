@@ -11,29 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150705232113) do
+ActiveRecord::Schema.define(version: 20150705235705) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "connectors", force: :cascade do |t|
     t.string   "name"
-    t.boolean  "enabled",         default: true
-    t.integer  "user_count",      default: 0
+    t.boolean  "enabled",             default: true
+    t.integer  "user_count",          default: 0
     t.datetime "last_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "metrics", force: :cascade do |t|
     t.integer  "jobs_pending"
     t.integer  "jobs_duration_min"
     t.integer  "jobs_duration_max"
     t.integer  "jobs_duration_avg"
     t.integer  "hourly_synced_count"
     t.integer  "daily_synced_count"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+  end
+
+  create_table "errors", force: :cascade do |t|
+    t.string   "error_type"
+    t.datetime "error_timestamp"
+    t.string   "message"
+    t.string   "company_2_tf_token"
+    t.json     "bad_orders"
+    t.string   "friendly_message"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
 end
