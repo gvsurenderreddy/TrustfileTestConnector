@@ -123,7 +123,9 @@ Possible statuses are:
 Sample response:
 ```
 
-{"enabled":true,"user_count":0,"last_updated_at":null,"metrics":{"jobs_pending":0,"jobs_duration_min":100,"jobs_duration_max":3000,"jobs_duration_avg":300,"hourly_synced_count":25,"daily_synced_count":null}}
+{"enabled":true,"user_count":0,"last_updated_at":null,
+	"metrics":
+	{"jobs_pending":0,"jobs_duration_min":100,"jobs_duration_max":3000,"jobs_duration_avg":300,"hourly_synced_count":25,"daily_synced_count":null}}
 ```
 
 #### PUT /connector
