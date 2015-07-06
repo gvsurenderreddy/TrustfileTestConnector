@@ -118,22 +118,8 @@ Possible statuses are:
 
 Sample response:
 ```
-{
-	"enabled": true,
-	"metrics": {
-		jobs_pending: 32
-		job_duration {
-			min: 100		//In seconds
-			max: 3000
-			average:1500
-			
-		}
-		"hourly_count": 100
-		"daily_count": 20
-	}
-	"user_count": 102,
-	"last_updated": "5/1/2015",
-}
+
+{"enabled":true,"user_count":0,"last_updated_at":null,"metrics":{"jobs_pending":0,"jobs_duration_min":100,"jobs_duration_max":3000,"jobs_duration_avg":300,"hourly_synced_count":25,"daily_synced_count":null}}
 ```
 
 #### PUT /connector
