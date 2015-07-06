@@ -1,6 +1,6 @@
 class DatasourcesController < ApplicationController
   skip_before_filter :verify_authenticity_token, only: [:create, :update, :destroy]
-  before_action :set_datasource, only: [:show, :update, :destroy]
+  before_action :set_datasource, only: [:show, :activities, :update, :destroy]
 
   # GET /datasources
   def index
@@ -10,7 +10,14 @@ class DatasourcesController < ApplicationController
     end
   end
 
-  # GET /datasources/1
+  # GET /datasources/:company_2_tf_token/activities
+  def activities
+    respond_to do |format|
+      format.json { render json: {:activities => @datasource.activities} }
+    end
+  end
+
+  # GET /datasources/:company_2_tf_token
   def show
     respond_to do |format|
       format.json { render json: {:datasource => @datasource} }
@@ -18,9 +25,8 @@ class DatasourcesController < ApplicationController
   end
 
   # POST /datasources
-  # POST /datasources.json
   def create
-    is_unique # TODO - clean up, this isn't necessary
+    set_unique # TODO - clean up, this isn't necessary
     @datasource = Datasource.new(datasource_params)
 
     respond_to do |format|
@@ -34,11 +40,11 @@ class DatasourcesController < ApplicationController
     end
   end
 
-  # PUT /datasources/1
+  # PUT /datasources/:company_2_tf_token
   # TODO resync historical data if start_date changed
   # TODO stop syncing if disabled
   def update
-    is_unique # TODO - clean up, this isn't necessary
+    set_unique # TODO - clean up, this isn't necessary
     respond_to do |format|
       if @datasource == nil
         format.json { render json: {"error" => "not found"}, status: :unprocessable_entity }
@@ -52,7 +58,7 @@ class DatasourcesController < ApplicationController
     end
   end
 
-  # DELETE /datasources/1
+  # DELETE /datasources/:company_2_tf_token
   def destroy
     @datasource.destroy
     respond_to do |format|
@@ -63,14 +69,12 @@ class DatasourcesController < ApplicationController
   def authenticate
     respond_to do |format|
         format.html { render json: @datasource.errors, status: :unprocessable_entity }
-      end
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_datasource
-      puts "params[:company_2_tf_token] = #{params[:company_2_tf_token]}"
       @datasource = Datasource.where(:company_2_tf_token => params[:company_2_tf_token]).first
     end
 
@@ -79,7 +83,7 @@ class DatasourcesController < ApplicationController
       params.require(:datasource).permit(:enabled, :company_name, :email, :start_date, :company_2_tf_token)
     end
 
-    def is_unique
+    def set_unique
       @unique = true
       @unique = false if Datasource.where(:company_2_tf_token => datasource_params['company_2_tf_token']).size != 0
     end

@@ -27,4 +27,6 @@ bad_orders = [
    ]
 
 Error.create(:error_type => 'ORDER', :error_timestamp => DateTime.now, :message => "CASTEXCEPTION", :company_2_tf_token => '12123121lk123', :friendly_message => 'missing sales', :bad_orders => bad_orders)
-Datasource.create(:enabled => true, :authorized => true, :company_name => 'company co', :email => 'user@email.com', :start_date => DateTime.now, :company_2_tf_token => '123kl123')
+ds = Datasource.create(:enabled => true, :authorized => true, :company_name => 'company co', :email => 'user@email.com', :start_date => DateTime.now, :company_2_tf_token => '123kl123')
+ds.activities << Activity.create(:action => "requested sales tax report for 6/2/2015")
+ds.activities << Activity.create(:action => "sent tax report for 6/2/2015 to Trustfile API")

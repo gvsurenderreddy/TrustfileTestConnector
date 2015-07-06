@@ -10,7 +10,7 @@ class ErrorsController < ApplicationController
   private
     # respond with errors from date
     # OR by default respond with errors from today
-      def set_errors
+    def set_errors
       @errors = nil
       begin
         errors_after_date = Date.parse(params['date'])
