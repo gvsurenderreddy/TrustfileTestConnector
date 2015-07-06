@@ -60,6 +60,13 @@ class DatasourcesController < ApplicationController
     end
   end
 
+  def authenticate
+    respond_to do |format|
+        format.html { render json: @datasource.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_datasource
