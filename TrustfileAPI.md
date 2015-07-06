@@ -143,6 +143,7 @@ Endpoint can be accesssed by https://api.trustfile.avalara.com/v2/orders
                     {
                         "orderId": "3002987",
                         "orderDate": "2014-12-09T09:53:59",
+                        "updateDate": "2014-12-09T09:53:59",
                         "shippingStreet": "4077 West Clinton Avenue",
                         "shippingCity": "Fresno",
                         "shippingState": "CA",
