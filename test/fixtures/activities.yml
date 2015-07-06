@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  datasource_id: 1
+  activity_timestamp: 2015-07-05 20:37:43
+  action: MyString
+
+two:
+  datasource_id: 1
+  activity_timestamp: 2015-07-05 20:37:43
+  action: MyString

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  enabled: false
+  authorized: false
+  start_date: 2015-07-05
+  company_2_tf_token: MyString
+  status_changed_at: 2015-07-05 19:40:35
+  last_sync_at: 2015-07-05 19:40:35
+  next_sync_at: 2015-07-05 19:40:35
+  status_message: MyString
+
+two:
+  enabled: false
+  authorized: false
+  start_date: 2015-07-05
+  company_2_tf_token: MyString
+  status_changed_at: 2015-07-05 19:40:35
+  last_sync_at: 2015-07-05 19:40:35
+  next_sync_at: 2015-07-05 19:40:35
+  status_message: MyString

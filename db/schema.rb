@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150705235705) do
+ActiveRecord::Schema.define(version: 20150706033743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: :cascade do |t|
+    t.integer  "datasource_id"
+    t.datetime "activity_timestamp"
+    t.string   "action"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
 
   create_table "connectors", force: :cascade do |t|
     t.string   "name"
@@ -29,6 +37,21 @@ ActiveRecord::Schema.define(version: 20150705235705) do
     t.integer  "jobs_duration_avg"
     t.integer  "hourly_synced_count"
     t.integer  "daily_synced_count"
+  end
+
+  create_table "datasources", force: :cascade do |t|
+    t.boolean  "enabled",            default: false
+    t.boolean  "authorized",         default: false
+    t.date     "start_date"
+    t.string   "company_name"
+    t.string   "email"
+    t.string   "company_2_tf_token"
+    t.datetime "status_changed_at"
+    t.datetime "last_sync_at"
+    t.datetime "next_sync_at"
+    t.string   "status_message"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
   end
 
   create_table "errors", force: :cascade do |t|

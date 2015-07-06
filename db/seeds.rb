@@ -27,3 +27,4 @@ bad_orders = [
    ]
 
 Error.create(:error_type => 'ORDER', :error_timestamp => DateTime.now, :message => "CASTEXCEPTION", :company_2_tf_token => '12123121lk123', :friendly_message => 'missing sales', :bad_orders => bad_orders)
+Datasource.create(:enabled => true, :authorized => true, :company_name => 'company co', :email => 'user@email.com', :start_date => DateTime.now, :company_2_tf_token => '123kl123')
