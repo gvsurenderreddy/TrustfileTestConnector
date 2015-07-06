@@ -12,9 +12,9 @@ Authorization: Bearer <Connector2TFToken>
 ```
 ## Micro-service API 
 
-### GET /datasources
+### GET /datasources?enabled=true
 
-list - array of tokens
+list - array of tokens 
 
 #### GET /datasource/:company_2_tf_token
 
