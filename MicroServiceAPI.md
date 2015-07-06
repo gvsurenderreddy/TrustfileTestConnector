@@ -12,7 +12,9 @@ Authorization: Bearer <Connector2TFToken>
 ```
 ## Micro-service API 
 
-### /datasources
+### GET /datasources
+
+list - array of tokens
 
 #### GET /datasource/:company_2_tf_token
 
@@ -51,7 +53,7 @@ Sample Response:
 * the activity logs should be sufficient to help the user understand what's going on synchronizing their account with Trustfile.
 * ??TBD Date formate ???
 
-#### POST /datasource
+#### POST /datasources
 ```
 {	
 	"Company2TFToken": "123abc", 
@@ -64,7 +66,7 @@ Sample Response:
 * the connector will synchronize all the Sales / Tax data starting from the start_date into Trustfile.
 * then the connector will periodically synchronize this datasource on at least a daily basis. 
 
-#### GET /datasource/:Company2TFToken/authentication
+#### GET /datasources/:Company2TFToken/authentication
 Sample querified:
 ```
 {
@@ -75,7 +77,7 @@ Sample querified:
 This call returns an iframe to complete the authentication with the host system.  The iframe is rendered in the DataSource management view of Trustfile.
 
 
-#### PUT /datasource/:Company2TFToken
+#### PUT /datasources/:Company2TFToken
 ```
 {
 	"enabled": false,
