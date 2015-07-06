@@ -16,7 +16,7 @@ Authorization: Bearer <Connector2TFToken>
 
 list - array of tokens 
 
-#### GET /datasource/:company_2_tf_token
+#### GET /datasources/:company_2_tf_token
 
 Sample Response: 
 
@@ -24,8 +24,6 @@ Sample Response:
 {	
 	"enabled": false,
 	"authorized": false,
-	"company_name": "company co",
-	"email": "user@email.com",
 	"status_changed_at": "10/21/2015 08:00",
 	"last_sync_at": "10/21/2015 08:00",
 	"next_sync_at": "10/21/2015 08:00",
@@ -57,9 +55,7 @@ Sample Response:
 ```
 {	
 	"Company2TFToken": "123abc", 
-	"start_date": "5/1/2015",
-	"company_name": "company co", 
-	"email": "user@email.com"
+	"start_date": "5/1/2015"
 }
 ```
 * the Company2TFToken is used to identify the DataSource in the micro-service API.  It's also used to authorize access to a company when posting data to Trustfile.
