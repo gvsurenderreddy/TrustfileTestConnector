@@ -13,8 +13,13 @@ Authorization: Bearer <Connector2TFToken>
 ## Micro-service API 
 
 ### GET /datasources?enabled=true
+Sample Response:  list of :company_2_tf_token 
 
-list - array of tokens 
+```
+{	
+	"datasources": ["akjsfakljasd"]
+}
+```
 
 #### GET /datasources/:company_2_tf_token
 
@@ -22,11 +27,12 @@ Sample Response:
 
 ```
 {	
-	"enabled": false,
+	"enabled": false, 
 	"authorized": false,
-	"status_changed_at": "10/21/2015 08:00",
-	"last_sync_at": "10/21/2015 08:00",
-	"next_sync_at": "10/21/2015 08:00",
+	"start_date": "2015-07-06",
+	"status_changed_at": "2015-07-06T22:26:28+00:00",
+	"last_sync_at": "2015-07-06T22:26:28+00:00",
+	"next_sync_at": "2015-07-06T22:26:28+00:00",
 	"status_message": "Trustfile is no longer authorized to access this Paypal account.  The connector has been disabled.  Reauthorize to re-enable synching."
 }
 ```
@@ -35,34 +41,34 @@ Sample Response:
 * The status message should be sufficient for the user to understand what state the connection is in and if there are any actions required of them to proceed.
 * 
 
-#### GET /datasource/:Company2TFToken/activty?days=14&limit=1000
+#### GET /datasource/:company_2_tf_token/activty?days=14&limit=1000
 
 Sample Response: 
 ```
 {	
 	"activity": [
-		{"timestamp": "10/21/2015 08:00", "action": "requested sales tax report for 6/2/2015"},
-		{"timestamp": "10/21/2015 09:00", "action": "sent tax report for 6/2/2015 to Trustfile API"}
+		{"timestamp": "2015-07-06T22:26:28+00:00", "action": "requested sales tax report for 6/2/2015"},
+		{"timestamp": "2015-07-06T22:26:28+00:00", "action": "sent tax report for 6/2/2015 to Trustfile API"}
 	]
 	
 }
 ```
 * default 2 weeks history to pull.  Trustfile may request up to 1 year of activity logs.
 * the activity logs should be sufficient to help the user understand what's going on synchronizing their account with Trustfile.
-* ??TBD Date formate ???
 
 #### POST /datasources
 ```
 {	
 	"company_2_tf_token": "123abc", 
-	"start_date": "5/1/2015"
+	"start_date": "2015-07-06"
 }
 ```
 * the Company2TFToken is used to identify the DataSource in the micro-service API.  It's also used to authorize access to a company when posting data to Trustfile.
 * the connector will synchronize all the Sales / Tax data starting from the start_date into Trustfile.
 * then the connector will periodically synchronize this datasource on at least a daily basis. 
 
-#### GET /datasources/:Company2TFToken/authentication
+#### GET /datasources/:company_2_tf_token/authentication
+
 Sample querified:
 ```
 {
@@ -70,10 +76,10 @@ Sample querified:
 }
 ```
 
-This call returns an iframe to complete the authentication with the host system.  The iframe is rendered in the DataSource management view of Trustfile.
+Response will be rendored in a popup iframe to handle oAuth or other authentication mechanism. 
+After the authentication is complete, redirect to the provided redirect_uri
 
-
-#### PUT /datasources/:Company2TFToken
+#### PUT /datasources/:company_2_tf_token
 ```
 {
 	"enabled": false,
@@ -84,7 +90,7 @@ This API allows Trustfile to:
 * update the Company2TFToken, if that token is refreshed for security reasons in TF
 * if the start_date is changed, the connector will pull all data from that new time period into Trustfile.
 
-#### DELETE /datasource/:Company2TFToken
+#### DELETE /datasources/:Company2TFToken
 
 Sample Response:
 ```
