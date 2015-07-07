@@ -1,10 +1,10 @@
-class DatasourcesController < ApplicationController
+class DatasourcesController < AuthenticatedController
   skip_before_filter :verify_authenticity_token, only: [:create, :update, :destroy]
   before_action :set_datasource, only: [:show, :activities, :update, :destroy]
 
   # GET /datasources?enabled
   def index
-    puts "request.headers['Authorization'] #{request.headers['Authorization']}"
+    puts "request.headers['Authorization'] "
     @datasources = Datasource.all.pluck(:company_2_tf_token) unless params['enabled']
     @datasources = Datasource.where(:enabled => true).pluck(:company_2_tf_token) if params['enabled'] == 'true'
     @datasources = Datasource.where(:enabled => false).pluck(:company_2_tf_token) if params['enabled'] == 'false'
