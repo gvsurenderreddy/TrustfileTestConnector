@@ -78,14 +78,7 @@ Sample Response:
 * the connector will synchronize all the Sales / Tax data starting from the start_date into Trustfile.
 * then the connector will periodically synchronize this datasource on at least a daily basis. 
 
-#### GET /datasources/:company_2_tf_token/authentication
-
-Sample querified:
-```
-{
-	"redirect_uri": "app.trustfile.avalara.com/datasource/:token"	
-}
-```
+#### GET /datasources/:company_2_tf_token/authentication?redirect_uri=app.trustfile.avalara.com/datasource/:token
 
 Response will be rendored in a popup iframe to handle oAuth or other authentication mechanism. 
 After the authentication is complete, redirect to the provided redirect_uri
