@@ -8,7 +8,7 @@
 ## Dates and Timestamps
 * dates are in yyyy-mm-dd format
 * timestamps are in the ISO format: 2015-07-06T22:26:28+00:00
-* timestamps are in GMT timezone
+* timestamps are in UTC +00:00 timezone
 
 ## Configs
 Put localization configs (specific to a given environment) into environment variables.
