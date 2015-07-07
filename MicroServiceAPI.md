@@ -12,13 +12,11 @@ Authorization: Bearer <Connector2TFToken>
 ```
 ## Micro-service API 
 
-//need to add access token doc
+### GET /datasources?enabled=true
 
-?? TBD datasources vs datasource ???
+list - array of tokens 
 
-### /datasource
-
-#### GET /datasource/:company_2_tf_token
+#### GET /datasources/:company_2_tf_token
 
 Sample Response: 
 
@@ -26,8 +24,6 @@ Sample Response:
 {	
 	"enabled": false,
 	"authorized": false,
-	"company_name": "company co",
-	"email": "user@email.com",
 	"status_changed_at": "10/21/2015 08:00",
 	"last_sync_at": "10/21/2015 08:00",
 	"next_sync_at": "10/21/2015 08:00",
@@ -55,20 +51,18 @@ Sample Response:
 * the activity logs should be sufficient to help the user understand what's going on synchronizing their account with Trustfile.
 * ??TBD Date formate ???
 
-#### POST /datasource
+#### POST /datasources
 ```
 {	
 	"Company2TFToken": "123abc", 
-	"start_date": "5/1/2015",
-	"company_name": "company co", 
-	"email": "user@email.com"
+	"start_date": "5/1/2015"
 }
 ```
 * the Company2TFToken is used to identify the DataSource in the micro-service API.  It's also used to authorize access to a company when posting data to Trustfile.
 * the connector will synchronize all the Sales / Tax data starting from the start_date into Trustfile.
 * then the connector will periodically synchronize this datasource on at least a daily basis. 
 
-#### GET /datasource/:Company2TFToken/authentication
+#### GET /datasources/:Company2TFToken/authentication
 Sample querified:
 ```
 {
@@ -79,7 +73,7 @@ Sample querified:
 This call returns an iframe to complete the authentication with the host system.  The iframe is rendered in the DataSource management view of Trustfile.
 
 
-#### PUT /datasource/:Company2TFToken
+#### PUT /datasources/:Company2TFToken
 ```
 {
 	"enabled": false,
@@ -123,7 +117,9 @@ Possible statuses are:
 Sample response:
 ```
 
-{"enabled":true,"user_count":0,"last_updated_at":null,"metrics":{"jobs_pending":0,"jobs_duration_min":100,"jobs_duration_max":3000,"jobs_duration_avg":300,"hourly_synced_count":25,"daily_synced_count":null}}
+{"enabled":true,"user_count":0,"last_updated_at":null,
+	"metrics":
+	{"jobs_pending":0,"jobs_duration_min":100,"jobs_duration_max":3000,"jobs_duration_avg":300,"hourly_synced_count":25,"daily_synced_count":null}}
 ```
 
 #### PUT /connector
