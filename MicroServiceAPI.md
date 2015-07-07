@@ -54,7 +54,7 @@ Sample Response:
 #### POST /datasources
 ```
 {	
-	"Company2TFToken": "123abc", 
+	"company_2_tf_token": "123abc", 
 	"start_date": "5/1/2015"
 }
 ```
@@ -165,26 +165,23 @@ Error Objects:
 	"timestamp": "10/21/2015 09:00", 
 	"Company2TFToken": :token
 	"bad_orders":  [
-                    {
-                        "orderId": "3002987",
-                        "orderDate": "2014-12-09T09:53:59",
-                        "originStreet": "4077 West Clinton Avenue",
-                        "originCity": "Fresno",
-                        "originState": "CA",
-                        "originZip": "93722",
-                        "shippingStreet": "4077 West Clinton Avenue",
-                        "shippingCity": "Fresno",
-                        "shippingState": "CA",
-                        "shippingZip": "93722",
-                        "shipping": "30.00",
-                        "shippingTax": "3.29",
-                        "sales": "514.99",
-                        "salesTax": "42.36",
-                        "quantity": "1",
-                        "description": "Feenn Ruby Brooch",
-                        "refund": false
-                    }
-                ]
+		" 'orderId': '3002987',
+                        'orderDate': '2014-12-09T09:53:59',
+                        'originStreet': '4077 West Clinton Avenue',
+                        'originCity': 'Fresno',
+                        'originState': 'CA',
+                        'originZip': '93722',
+                        'shippingStreet': '4077 West Clinton Avenue',
+                        'shippingCity': 'Fresno',
+                        'shippingState': 'CA',
+                        'shippingZip': '93722',
+                        'shipping': '30.00',
+                        'shippingTax': '3.29',
+                        'sales': '514.99',
+                        'salesTax': '42.36',
+                        'quantity': '1',
+                        'description': 'Feenn Ruby Brooch',
+                        'refund': false" ]
 	"friendly_message": "missing sales",
 	"message": CASTEXCEPTION
 }
