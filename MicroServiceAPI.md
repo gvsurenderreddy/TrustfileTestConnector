@@ -5,11 +5,16 @@
 * Company2TFToken - identifies and authorizes access to the TF company to push data into.
 * TF2ConnectorToken - authorizes Trustfile to access operate the connector micro-service API
 
-### TConnector2TFToken Authentication token usage
-Header Param:
+## Dates and Timestamps
+* dates are in yyyy-mm-dd format
+* timestamps are in the ISO format: 2015-07-06T22:26:28+00:00
+* timestamps are in GMT timezone
+
+## API requests are authorized with header param
 ```
-Authorization: Bearer <Connector2TFToken>
+Authorization: Bearer connector_2_tf_token
 ```
+
 ## Micro-service API 
 
 ### GET /datasources?enabled=true
