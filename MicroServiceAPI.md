@@ -1,9 +1,9 @@
 # Trustfile Connector Implementation
 
 ## Glossary
-* Connector2TFToken - identifies the connector and restricts access to environments / version of TF API the connector is certified for. (See below for Token usage in header)
-* Company2TFToken - identifies and authorizes access to the TF company to push data into.
-* TF2ConnectorToken - authorizes Trustfile to access operate the connector micro-service API
+* connector_2_tf_token - identifies the connector and restricts access to environments / version of TF API the connector is certified for. (See below for Token usage in header)
+* company_2_tf_token - identifies and authorizes access to the TF company to push data into.
+* tf_2_connector_token - authorizes Trustfile to access operate the connector micro-service API
 
 ## Dates and Timestamps
 * dates are in yyyy-mm-dd format
@@ -68,7 +68,7 @@ Sample Response:
 	"start_date": "2015-07-06"
 }
 ```
-* the Company2TFToken is used to identify the DataSource in the micro-service API.  It's also used to authorize access to a company when posting data to Trustfile.
+* the company_2_tf_token is used to identify the DataSource in the micro-service API.  It's also used to authorize access to a company when posting data to Trustfile.
 * the connector will synchronize all the Sales / Tax data starting from the start_date into Trustfile.
 * then the connector will periodically synchronize this datasource on at least a daily basis. 
 
@@ -95,7 +95,7 @@ This API allows Trustfile to:
 * update the Company2TFToken, if that token is refreshed for security reasons in TF
 * if the start_date is changed, the connector will pull all data from that new time period into Trustfile.
 
-#### DELETE /datasources/:Company2TFToken
+#### DELETE /datasources/:company_2_tf_token
 
 Sample Response:
 ```
