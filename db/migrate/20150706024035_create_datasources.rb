@@ -4,6 +4,7 @@ class CreateDatasources < ActiveRecord::Migration
       t.boolean :enabled, :default => false
       t.boolean :authorized, :default => false
       t.date :start_date, :required => true
+      t.string :host_system_identifier
       t.string :company_2_tf_token :null => false
       t.timestamp :status_changed_at
       t.timestamp :last_sync_at

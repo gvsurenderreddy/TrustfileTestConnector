@@ -25,13 +25,18 @@ class DatasourcesController < AuthenticatedController
   # GET /datasources/:company_2_tf_token
   def show
     respond_to do |format|
-      format.json { render json: {:datasource => {:enabled => @datasource[:enabled],
+      if @datasource
+        format.json { render json: {:datasource => {:enabled => @datasource[:enabled],
                                             :authorized => @datasource[:authorized],
                                             :start_date => @datasource[:status_changed_at],
+                                            :host_system_identifier => @datasource[:host_system_identifier],
                                             :status_changed_at => @datasource[:status_changed_at],
                                             :last_sync_at => @datasource[:last_sync_at],
                                             :next_sync_at => @datasource[:next_sync_at],
                                             :status_message => @datasource[:status_message]}}}
+      else
+        format.json { render json: {'error' => 'datasource not found'}, status: :unprocessable_entity }
+      end
     end
   end
 
