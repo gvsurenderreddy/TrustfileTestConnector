@@ -39,6 +39,7 @@ Sample Response:
 {	
 	"enabled": false, 
 	"authorized": false,
+	"host_system_identifier": "account 13222432",
 	"start_date": "2015-07-06",
 	"status_changed_at": "2015-07-06T22:26:28+00:00",
 	"last_sync_at": "2015-07-06T22:26:28+00:00",
@@ -49,7 +50,7 @@ Sample Response:
 * Enabled datasources will process data periodically if authorized
 * Authorized datasources are authenticated with the host integration system (paypal, amazon..) and allowed to pull sales/tax data
 * The status message should be sufficient for the user to understand what state the connection is in and if there are any actions required of them to proceed.
-* 
+* The host_system_identifier will be displayed to the user (if not null) in TF to identify which host account was used for this connector. 
 
 #### GET /datasource/:company_2_tf_token/activty?days=14&limit=1000
 
