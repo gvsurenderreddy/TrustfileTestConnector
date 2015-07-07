@@ -83,7 +83,7 @@ class DatasourcesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def datasource_params
-      params.require(:datasource).permit(:enabled, :company_name, :email, :start_date, :company_2_tf_token)
+      params.require(:datasource).permit(:enabled, :start_date, :company_2_tf_token)
     end
 
     def set_unique
