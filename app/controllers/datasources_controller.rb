@@ -2,9 +2,12 @@ class DatasourcesController < ApplicationController
   skip_before_filter :verify_authenticity_token, only: [:create, :update, :destroy]
   before_action :set_datasource, only: [:show, :activities, :update, :destroy]
 
-  # GET /datasources
+  # GET /datasources?enabled
   def index
-    @datasources = Datasource.all
+    puts "request.headers['Authorization'] #{request.headers['Authorization']}"
+    @datasources = Datasource.all.pluck(:company_2_tf_token) unless params['enabled']
+    @datasources = Datasource.where(:enabled => true).pluck(:company_2_tf_token) if params['enabled'] == 'true'
+    @datasources = Datasource.where(:enabled => false).pluck(:company_2_tf_token) if params['enabled'] == 'false'
     respond_to do |format|
       format.json { render json: {:datasources => @datasources} }
     end
@@ -22,20 +25,23 @@ class DatasourcesController < ApplicationController
   # GET /datasources/:company_2_tf_token
   def show
     respond_to do |format|
-      format.json { render json: {:datasource => @datasource} }
+      format.json { render json: {:datasource => {:enabled => @datasource[:enabled],
+                                            :authorized => @datasource[:authorized],
+                                            :start_date => @datasource[:status_changed_at],
+                                            :status_changed_at => @datasource[:status_changed_at],
+                                            :last_sync_at => @datasource[:last_sync_at],
+                                            :next_sync_at => @datasource[:next_sync_at],
+                                            :status_message => @datasource[:status_message]}}}
     end
   end
 
   # POST /datasources
   def create
-    set_unique # TODO - clean up, this isn't necessary
     @datasource = Datasource.new(datasource_params)
 
     respond_to do |format|
-      if @unique && @datasource.save
+      if @datasource.save
         format.json { render json: {:datasource => @datasource} }
-      elsif !@unique
-        format.json { render json: {"error" => "datasource not unique"}, status: :unprocessable_entity }
       else
         format.json { render json: @datasource.errors, status: :unprocessable_entity }
       end
@@ -46,12 +52,9 @@ class DatasourcesController < ApplicationController
   # TODO resync historical data if start_date changed
   # TODO stop syncing if disabled
   def update
-    set_unique # TODO - clean up, this isn't necessary
     respond_to do |format|
       if @datasource == nil
         format.json { render json: {"error" => "not found"}, status: :unprocessable_entity }
-      elsif !@unique
-        format.json { render json: {"error" => "datasource not unique"}, status: :unprocessable_entity }
       elsif @datasource.update(datasource_params)
         format.json { render json: {:datasource => @datasource} }
       else
@@ -84,11 +87,6 @@ class DatasourcesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def datasource_params
       params.require(:datasource).permit(:enabled, :start_date, :company_2_tf_token)
-    end
-
-    def set_unique
-      @unique = true
-      @unique = false if Datasource.where(:company_2_tf_token => datasource_params['company_2_tf_token']).size != 0
     end
 
 end

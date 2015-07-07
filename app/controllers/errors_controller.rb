@@ -1,4 +1,4 @@
-class ErrorsController < ApplicationController
+class ErrorsController < AuthenticatedController
   before_action :set_errors, only: [:show]
 
   def show

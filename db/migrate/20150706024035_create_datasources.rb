@@ -12,8 +12,6 @@ class CreateDatasources < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    # TODO fix unique constraint
-    add_index :datasources, :company_2_tf_token, :unique => true
-
+    add_index(:datasources, :company_2_tf_token)
   end
 end

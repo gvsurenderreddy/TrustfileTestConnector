@@ -1,4 +1,4 @@
-class ConnectorsController < ApplicationController
+class ConnectorsController < AuthenticatedController
   skip_before_filter :verify_authenticity_token, only: [:update]
   before_action :set_connector, only: [:show, :update]
 

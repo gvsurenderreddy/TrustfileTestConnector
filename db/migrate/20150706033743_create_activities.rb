@@ -7,5 +7,6 @@ class CreateActivities < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+    add_index(:activities, :datasource_id)
   end
 end

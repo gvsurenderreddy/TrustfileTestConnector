@@ -10,5 +10,6 @@ class CreateErrors < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+    add_index(:errors, :company_2_tf_token)
   end
 end

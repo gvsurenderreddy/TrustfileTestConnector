@@ -43,8 +43,6 @@ ActiveRecord::Schema.define(version: 20150706033743) do
     t.boolean  "enabled",            default: false
     t.boolean  "authorized",         default: false
     t.date     "start_date"
-    t.string   "company_name"
-    t.string   "email"
     t.string   "company_2_tf_token"
     t.datetime "status_changed_at"
     t.datetime "last_sync_at"
