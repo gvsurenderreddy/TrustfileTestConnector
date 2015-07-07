@@ -117,7 +117,7 @@ Possible statuses are:
 Sample response:
 ```
 
-{"enabled":true,"user_count":0,"last_updated_at":null,
+{"enabled":true,"user_count":0,"last_updated_at":"2015-07-06T22:26:28+00:00",
 	"metrics":
 	{"jobs_pending":0,"jobs_duration_min":100,"jobs_duration_max":3000,
 	  "jobs_duration_avg":300,"hourly_synced_count":25,"daily_synced_count":100}}
@@ -133,7 +133,7 @@ Sample response:
 
 This allows Trustfile to enable/disable a connector.   When a connector is disabled, it stops synchronizing data with Trustfile until it is re-enabled.
 
-####  GET /connector/errors?date=6/10/2015
+####  GET /connector/errors?date=2015-06-10T22:26:28+00:00
 
 Domains: DATASOURCE, INTEGRATION, SYSTEM, ORDER
 
@@ -145,25 +145,25 @@ Error Objects:
 
 {
 	"type": "INTEGRATION", 
-	"timestamp": "10/21/2015 08:00", 
+	"timestamp": "2015-07-06T22:26:28+00:00", 
 	"message": "request for token XYZ timed out"
 }
 
 {
 	"type": "DATASOURCE", 
-	"timestamp": "10/21/2015 09:00", 
+	"timestamp": "2015-07-06T22:26:28+00:00", 
 	"message": "request for token ABC was throttled, retrying in 2 hours"
 }
 
 {
 	"type": "SYSTEM", 
-	"timestamp": "10/21/2015 09:00", 
+	"timestamp": "2015-07-06T22:26:28+00:00", 
 	"message": "% Memory Used met or exceeded 80%, increasing to 80% for 10 minutes at 02:30AM and continued until 06:20PM"
 }
 
 {
 	"type": "ORDER", 
-	"timestamp": "10/21/2015 09:00", 
+	"timestamp": "2015-07-06T22:26:28+00:00", 
 	"Company2TFToken": :token
 	"bad_orders":  [
 		" 'orderId': '3002987',
