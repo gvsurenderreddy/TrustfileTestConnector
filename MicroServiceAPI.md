@@ -108,9 +108,9 @@ Sample response:
 ```
 {  "healthiness":
 	[
-	  {"connector": "OK", "description": "nominal"},
-	  {"host_system": "OK", "description": "nominal"},
-	  {"trustfile": "OK", "description": "nominal"}
+	  {"type": "connector", "status": "OK", "description": "nominal"},
+	  {"type": "host_system", "status": "OK", "description": "nominal"},
+	  {"type": "trustfile", "status": "OK", "description": "nominal"}
 	]
 }
 ```
