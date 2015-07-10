@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150706033743) do
+ActiveRecord::Schema.define(version: 20150708211733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20150706033743) do
     t.string   "status_message"
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
+    t.string   "redirect"
   end
 
   create_table "errors", force: :cascade do |t|
@@ -61,6 +62,16 @@ ActiveRecord::Schema.define(version: 20150706033743) do
     t.string   "friendly_message"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+  end
+
+  create_table "fake_connnections", force: :cascade do |t|
+    t.string   "name"
+    t.string   "state"
+    t.integer  "sale_count"
+    t.integer  "refund_count"
+    t.string   "scenario"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end

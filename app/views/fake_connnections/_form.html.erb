@@ -1,0 +1,42 @@
+<%= form_for(@fake_connnection) do |f| %>
+  <% if @fake_connnection.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fake_connnection.errors.count, "error") %> prohibited this fake_connnection from being saved:</h2>
+
+      <ul>
+      <% @fake_connnection.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, :value => "test connector" %>
+  </div>
+  <br/>
+  <div class="field">
+    <%= f.label 'shipping destination' %><br>
+    <%=select_tag 'state', options_for_select(us_states),:name=>"state",:id=>"state"%>
+  </div>
+  <br/>
+  <div class="field">
+    <%= f.label 'average daily sales' %><br>
+    <%= f.number_field :sale_count, :value => 20 %>
+  </div>
+  <br/>
+  <div class="field">
+    <%= f.label 'average daily refunds' %><br>
+    <%= f.number_field :refund_count, :value => 2 %>
+  </div>
+  <br/>
+  <div class="field">
+    <%= f.label :scenario %><br>
+    <%= f.select :scenario, [["Simple", "Simple"], ["Order Issues", "Order Issues"], ["Integration Issues", "Integration Issues"]] %>
+  </div>
+  <br/>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

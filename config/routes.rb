@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :fake_connnections
   get 'connector', to: 'connectors#show', :defaults => { :format => 'json' }
   put 'connector', to: 'connectors#update', :defaults => { :format => 'json' }
   get 'connector/errors', to: 'errors#show', :defaults => { :format => 'json' }

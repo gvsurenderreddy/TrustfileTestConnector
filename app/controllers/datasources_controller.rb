@@ -30,6 +30,7 @@ class DatasourcesController < AuthenticatedController
                                             :authorized => @datasource[:authorized],
                                             :start_date => @datasource[:status_changed_at],
                                             :host_system_identifier => @datasource[:host_system_identifier],
+                                            :redirect_uri => @datasource[:redirect],
                                             :status_changed_at => @datasource[:status_changed_at],
                                             :last_sync_at => @datasource[:last_sync_at],
                                             :next_sync_at => @datasource[:next_sync_at],
@@ -77,10 +78,11 @@ class DatasourcesController < AuthenticatedController
     end
   end
 
+  # AUTH /datasources/:company_2_tf_token/authentication?redirect_uri
   def authenticate
-    respond_to do |format|
-        format.json { render json: @datasource.errors, status: :unprocessable_entity }
-    end
+    redirect_to :controller => 'fake_connnections', :action => 'new',
+                              :company_2_tf_token => params[:company_2_tf_token],
+                              :redirect_uri => params[:redirect_uri]
   end
 
   private

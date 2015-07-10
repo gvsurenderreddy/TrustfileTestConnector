@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  state: MyString
+  sale_count: 1
+  refund_count: 1
+  scenario: MyString
+
+two:
+  name: MyString
+  state: MyString
+  sale_count: 1
+  refund_count: 1
+  scenario: MyString

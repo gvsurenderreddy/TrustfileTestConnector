@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @fake_connnection.name %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @fake_connnection.state %>
+</p>
+
+<p>
+  <strong>Sale count:</strong>
+  <%= @fake_connnection.sale_count %>
+</p>
+
+<p>
+  <strong>Refund count:</strong>
+  <%= @fake_connnection.refund_count %>
+</p>
+
+<p>
+  <strong>Scenario:</strong>
+  <%= @fake_connnection.scenario %>
+</p>
+
+<%= link_to 'Edit', edit_fake_connnection_path(@fake_connnection) %> |
+<%= link_to 'Back', fake_connnections_path %>
