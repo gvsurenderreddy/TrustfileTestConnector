@@ -86,7 +86,7 @@ After the authentication is complete, redirect to the provided redirect_uri
 #### PUT /datasources/:company_2_tf_token
 ```
 {
-	"sync_enabled": false,
+	"enabled": false,
 }
 ```
 This API allows Trustfile to:
