@@ -106,7 +106,7 @@ Sample Response:
 ### /orangez/health
 Sample response:
 ```
-{  "healthiness":
+{  "statuses":
 	[
 	  {"type": "connector", "status": "OK", "description": "nominal"},
 	  {"type": "host_system", "status": "OK", "description": "nominal"},
