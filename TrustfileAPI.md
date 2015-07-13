@@ -268,7 +268,7 @@ Endpoint can be accesssed by https://orders.trustfile.avalara.com/v2/orders
 
 ```
         {
-          [        
+          alerts: [        
              {"timestamp": "10/21/2015 08:00",  "type": 'DATASOURCE', "Company2TFToken": "1231211321", "alert": "unable to authenticate.  disabling."},
              {"timestamp": "10/21/2015 08:00",  "type": 'DATASOURCE', "Company2TFToken": "1231211321", "alert": "throttled.  retrying."}
           ]
@@ -278,7 +278,7 @@ Endpoint can be accesssed by https://orders.trustfile.avalara.com/v2/orders
 
 ```
         {
-          [        
+          alerts: [        
              {"timestamp": "10/21/2015 08:00",  "type": 'INTEGRATION', "alert": "connection to http:// timing out.  Retrying"},
              {"timestamp": "10/21/2015 09:00",  "type": 'INTEGRATION', "alert": "connection to http:// timing out.  Retrying"},
              {"timestamp": "10/21/2015 10:00",  "type": 'INTEGRATION', "alert": "connection to http:// timing out."}
