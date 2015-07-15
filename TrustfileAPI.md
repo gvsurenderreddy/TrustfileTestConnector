@@ -268,7 +268,7 @@ Endpoint can be accesssed by https://api.trustfile.avalara.com/v2/orders
 
 ### Alerts 
 
-Endpoint can be accesssed by https://orders.trustfile.avalara.com/v2/orders
+Endpoint can be accesssed by https://orders.trustfile.avalara.com/v2/alerts
 
 #### POST /v2/alerts
 
