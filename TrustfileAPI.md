@@ -141,6 +141,8 @@ Endpoint can be accesssed by https://api.trustfile.avalara.com/v2/orders
     + Body
     
             {
+                "connector_2_tf_token": "6d20c261-4e7d-4699-ac30-b206ebaa3377",
+                "company_2_tf_token":  "ae63d912-f8f9-46b6-936d-142131d09676",
                 "orders": [
                     {
                         "orderId": "3002987",
@@ -194,6 +196,8 @@ Endpoint can be accesssed by https://api.trustfile.avalara.com/v2/orders
     + Body
      
             {
+                "connector_2_tf_token": "6d20c261-4e7d-4699-ac30-b206ebaa3377",
+                "company_2_tf_token":  "ae63d912-f8f9-46b6-936d-142131d09676",
                 "orders": [
                     {
                         "orderId": "3002987",
@@ -270,9 +274,10 @@ Endpoint can be accesssed by https://orders.trustfile.avalara.com/v2/orders
 
 ```
         {
+          "connector_2_tf_token": "6d20c261-4e7d-4699-ac30-b206ebaa3377",
           "alerts": [        
-             {"timestamp": "10/21/2015 08:00",  "type": 'DATASOURCE', "Company2TFToken": "1231211321", "alert": "unable to authenticate.  disabling."},
-             {"timestamp": "10/21/2015 08:00",  "type": 'DATASOURCE', "Company2TFToken": "1231211321", "alert": "throttled.  retrying."}
+             {"timestamp": "10/21/2015 08:00",  "type": 'DATASOURCE', "company_2_tf_token": "1231211321", "alert": "unable to authenticate.  disabling."},
+             {"timestamp": "10/21/2015 08:00",  "type": 'DATASOURCE', "company_2_tf_token": "1231211321", "alert": "throttled.  retrying."}
           ]
         
         }
@@ -280,6 +285,7 @@ Endpoint can be accesssed by https://orders.trustfile.avalara.com/v2/orders
 
 ```
         {
+          "connector_2_tf_token": "6d20c261-4e7d-4699-ac30-b206ebaa3377",
           "alerts": [        
              {"timestamp": "10/21/2015 08:00",  "type": 'INTEGRATION', "alert": "connection to http:// timing out.  Retrying"},
              {"timestamp": "10/21/2015 09:00",  "type": 'INTEGRATION', "alert": "connection to http:// timing out.  Retrying"},
