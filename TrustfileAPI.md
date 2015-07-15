@@ -100,9 +100,9 @@ Endpoint can be accesssed by https://api.trustfile.avalara.com/v2/orders
                         "shippingZip": "93722",
                         "shipping": "30.00",
                         "shippingTax": "3.29",
-                        "sales": "514.99",
-                        "salesTax": "42.36",
-                        "quantity": "1",
+                        "sales": 514.99,
+                        "salesTax": 42.36,
+                        "quantity": 1,
                         "description": "Feenn Ruby Brooch",
                         "refund": false
                     }
@@ -154,9 +154,9 @@ Endpoint can be accesssed by https://api.trustfile.avalara.com/v2/orders
                         "shippingZip": "93722",
                         "shipping": "30.00",
                         "shippingTax": "3.29",
-                        "sales": "514.99",
-                        "salesTax": "42.36",
-                        "quantity": "1",
+                        "sales": 514.99,
+                        "salesTax": 42.36,
+                        "quantity": 1,
                         "description": "Feenn Ruby Brooch",
                         "refund": true
                     }
@@ -212,9 +212,9 @@ Endpoint can be accesssed by https://api.trustfile.avalara.com/v2/orders
                         "shippingZip": "93722",
                         "shipping": "30.00",
                         "shippingTax": "3.29",
-                        "sales": "514.99",
-                        "salesTax": "42.36",
-                        "quantity": "1",
+                        "sales": 514.99,
+                        "salesTax": 42.36,
+                        "quantity": 1,
                         "description": "Feenn Ruby Brooch",
                         "refund": false
                     }
