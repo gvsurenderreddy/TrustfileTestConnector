@@ -11,6 +11,9 @@ Endpoint can be accesssed by https://api.trustfile.avalara.com/v2/orders
 - Defaults are used for Shipping or Origin Address if none provided or the address is invalid.
 - Maximum of 1000 orders may be posted at one time.
 - Orders must be posted in sequential order, otherwise the /orders/last will not be a reliable way to know what Trustfile knows about. 
+- Required fields include: orderId, orderDate, shippingState, shippingZip, shippingTax, shipping, salesTax, quantity, refund.
+- Optional fields:  originStreet, originCity, originState, originZip
+
 
 ```
         {
@@ -80,6 +83,8 @@ Endpoint can be accesssed by https://api.trustfile.avalara.com/v2/orders
             }
         }
 ```
+
+
 
 
 ### Create Basic Order
