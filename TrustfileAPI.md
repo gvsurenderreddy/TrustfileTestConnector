@@ -3,7 +3,7 @@
 ### Orders
 Endpoint can be accesssed by https://api.trustfile.avalara.com/v2/orders
 
-#### POST /v2/orders?Company2TFToken=:Company2TFToken
+#### POST /v2/orders
 - Orders are created or updated if they already exist.
 - Send sale or refund
 - Addresses are used to source the jurisdictions involved in the sale.  
