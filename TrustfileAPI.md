@@ -94,7 +94,7 @@ Endpoint can be accesssed by https://api.trustfile.avalara.com/v2/orders
     
             {
                 "connector_2_tf_token": "6d20c261-4e7d-4699-ac30-b206ebaa3377",
-                "company_2_tf_token":  "ae63d912-f8f9-46b6-936d-142131d09676",
+                "access_token":  "ae63d912-f8f9-46b6-936d-142131d09676",
                 "orders": [
                     {
                         "orderId": "3002987",
@@ -147,7 +147,7 @@ Endpoint can be accesssed by https://api.trustfile.avalara.com/v2/orders
     
             {
                 "connector_2_tf_token": "6d20c261-4e7d-4699-ac30-b206ebaa3377",
-                "company_2_tf_token":  "ae63d912-f8f9-46b6-936d-142131d09676",
+                "access_token":  "ae63d912-f8f9-46b6-936d-142131d09676",
                 "orders": [
                     {
                         "orderId": "3002987",
@@ -202,7 +202,7 @@ Endpoint can be accesssed by https://api.trustfile.avalara.com/v2/orders
      
             {
                 "connector_2_tf_token": "6d20c261-4e7d-4699-ac30-b206ebaa3377",
-                "company_2_tf_token":  "ae63d912-f8f9-46b6-936d-142131d09676",
+                "access_token":  "ae63d912-f8f9-46b6-936d-142131d09676",
                 "orders": [
                     {
                         "orderId": "3002987",
