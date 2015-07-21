@@ -17,7 +17,7 @@ https://devcenter.heroku.com/articles/config-vars
 
 ## API requests are authorized with header param
 ```
-Authorization: Bearer connector_2_tf_token
+Authorization: Bearer tf_2_connector_token
 ```
 
 ## Micro-service API 
