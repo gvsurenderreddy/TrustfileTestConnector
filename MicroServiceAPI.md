@@ -52,7 +52,7 @@ Sample Response:
 * The status message should be sufficient for the user to understand what state the connection is in and if there are any actions required of them to proceed.
 * The host_system_identifier will be displayed to the user (if not null) in TF to identify which host account was used for this connector. 
 
-#### GET /datasource/:company_2_tf_token/activty?days=14&limit=1000
+#### GET /datasources/:company_2_tf_token/activty?days=14&limit=1000
 
 Sample Response: 
 ```
