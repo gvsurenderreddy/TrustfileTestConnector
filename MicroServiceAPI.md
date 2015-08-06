@@ -104,6 +104,7 @@ Sample Response:
 ```
 
 ### /orangez/health
+NOTE:  does not require Authentication header
 Sample response:
 ```
 {  "statuses":
