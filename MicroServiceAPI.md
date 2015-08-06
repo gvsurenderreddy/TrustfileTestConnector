@@ -205,6 +205,22 @@ Sample response:
 
 This allows Trustfile to enable/disable a connector.   When a connector is disabled, it stops synchronizing data with Trustfile until it is re-enabled.
 
+Success
+```
+{
+    "status": "success"
+}
+```
+
+Errors look like:
+```
+500
+{
+  status: 'error',
+  message: 'attribute not found.'
+}
+```
+
 ####  GET /connector/errors?date=2015-06-10T22:26:28+00:00
 
 Domains: DATASOURCE, INTEGRATION, SYSTEM, ORDER
