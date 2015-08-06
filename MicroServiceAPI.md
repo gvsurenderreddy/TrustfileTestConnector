@@ -31,6 +31,7 @@ Sample Response:  list of :company_2_tf_token
 }
 ```
 
+
 #### GET /datasources/:company_2_tf_token
 
 Sample Response: 
@@ -51,6 +52,14 @@ Sample Response:
 * Authorized datasources are authenticated with the host integration system (paypal, amazon..) and allowed to pull sales/tax data
 * The status message should be sufficient for the user to understand what state the connection is in and if there are any actions required of them to proceed.
 * The host_system_identifier will be displayed to the user (if not null) in TF to identify which host account was used for this connector. 
+
+```
+500
+{
+  status: 'error',
+  message: 'User not found.'
+}
+```
 
 #### GET /datasources/:company_2_tf_token/activty?days=14&limit=1000
 
