@@ -53,6 +53,7 @@ Sample Response:
 * The status message should be sufficient for the user to understand what state the connection is in and if there are any actions required of them to proceed.
 * The host_system_identifier will be displayed to the user (if not null) in TF to identify which host account was used for this connector. 
 
+Errors look like:
 ```
 500
 {
@@ -76,6 +77,16 @@ Sample Response:
 * default 2 weeks history to pull.  Trustfile may request up to 1 year of activity logs.
 * the activity logs should be sufficient to help the user understand what's going on synchronizing their account with Trustfile.
 
+
+Errors look like:
+```
+500
+{
+  status: 'error',
+  message: 'User not found.'
+}
+```
+
 #### POST /datasources
 ```
 {	
@@ -86,6 +97,15 @@ Sample Response:
 * the company_2_tf_token is used to identify the DataSource in the micro-service API.  It's also used to authorize access to a company when posting data to Trustfile.
 * the connector will synchronize all the Sales / Tax data starting from the start_date into Trustfile.
 * then the connector will periodically synchronize this datasource on at least a daily basis. 
+
+Errors look like:
+```
+500
+{
+  status: 'error',
+  message: 'User already exists.'
+}
+```
 
 #### GET /datasources/:company_2_tf_token/authentication?redirect_uri=app.trustfile.avalara.com/datasource/:token
 
@@ -103,12 +123,30 @@ This API allows Trustfile to:
 * update the Company2TFToken, if that token is refreshed for security reasons in TF
 * if the start_date is changed, the connector will pull all data from that new time period into Trustfile.
 
+Errors look like:
+```
+500
+{
+  status: 'error',
+  message: 'User not found.'
+}
+```
+
 #### DELETE /datasources/:company_2_tf_token
 
 Sample Response:
 ```
 {
 	"status": "success"
+}
+```
+
+Errors look like:
+```
+500
+{
+  status: 'error',
+  message: 'User not found.'
 }
 ```
 
