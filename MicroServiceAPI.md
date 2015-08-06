@@ -98,6 +98,13 @@ Errors look like:
 * the connector will synchronize all the Sales / Tax data starting from the start_date into Trustfile.
 * then the connector will periodically synchronize this datasource on at least a daily basis. 
 
+Success
+```
+{
+    "status": "success"
+}
+```
+
 Errors look like:
 ```
 500
@@ -122,6 +129,13 @@ This API allows Trustfile to:
 * enabled: true/false
 * update the Company2TFToken, if that token is refreshed for security reasons in TF
 * if the start_date is changed, the connector will pull all data from that new time period into Trustfile.
+
+Success
+```
+{
+    "status": "success"
+}
+```
 
 Errors look like:
 ```
