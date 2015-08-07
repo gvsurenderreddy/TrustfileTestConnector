@@ -45,7 +45,8 @@ Sample Response:
 	"status_changed_at": "2015-07-06T22:26:28+00:00",
 	"last_sync_at": "2015-07-06T22:26:28+00:00",
 	"next_sync_at": "2015-07-06T22:26:28+00:00",
-	"status_message": "Trustfile is no longer authorized to access this Paypal account.  The connector has been disabled.  Reauthorize to re-enable synching."
+	"status_message": "Trustfile is no longer authorized to access this Paypal account.  The connector has been disabled.  Reauthorize to re-enable synching.",
+	"label": "user account info"
 }
 ```
 * Enabled datasources will process data periodically if authorized
