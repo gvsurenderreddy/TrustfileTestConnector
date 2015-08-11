@@ -110,8 +110,8 @@ Errors look like:
 ```
 500
 {
-  status: 'error',
-  message: 'User already exists.'
+  "success": false,
+  "message": 'User already exists.'
 }
 ```
 
