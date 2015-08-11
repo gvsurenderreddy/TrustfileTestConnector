@@ -102,7 +102,7 @@ Errors look like:
 Success
 ```
 {
-    "status": "success"
+    "success": true
 }
 ```
 
