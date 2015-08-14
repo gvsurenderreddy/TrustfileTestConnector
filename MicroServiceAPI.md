@@ -63,7 +63,7 @@ Errors look like:
 }
 ```
 
-#### GET /datasources/:company_2_tf_token/activty?days=14&limit=1000
+#### GET /datasources/:company_2_tf_token/activities?days=14&limit=1000
 
 Sample Response: 
 ```
