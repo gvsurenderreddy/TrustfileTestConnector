@@ -68,7 +68,7 @@ Errors look like:
 Sample Response: 
 ```
 {	
-	"activity": [
+	"activities": [
 		{"timestamp": "2015-07-06T22:26:28+00:00", "action": "requested sales tax report for 6/2/2015"},
 		{"timestamp": "2015-07-06T22:26:28+00:00", "action": "sent tax report for 6/2/2015 to Trustfile API"}
 	]
