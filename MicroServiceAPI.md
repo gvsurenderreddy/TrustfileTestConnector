@@ -124,6 +124,8 @@ After the authentication is complete, redirect to the provided redirect_uri
 ```
 {
 	"enabled": false,
+	"company_2_tf_token": "123xyz",
+	"start_date": "2015-06-15"
 }
 ```
 This API allows Trustfile to:
