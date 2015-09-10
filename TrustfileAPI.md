@@ -336,13 +336,26 @@ Optional Lead fields:
 
 example body
 ```
+POST /v2/company/signup HTTP/1.1
+Content-Type: application/json
+Host: staging-api.trustfile.avalara.com
+Connection: close
+User-Agent: Paw/2.1.1 (Macintosh; OS X/10.10.5) GCDHTTPRequest
+Content-Length: 301
+
 {
-    "email": "test.me@gmail.com",
-    "firstName": "Test",
-    "lastName": "Me",
-    "companyName": "Best Company Ever",
-    "campaignId": "2" 
+  "email": "test.me@gmail.com",
+  "firstName": "test",
+  "lastName": "me",
+  "companyPhone": "4258776015",
+  "companyName": "Best Company Ever",
+  "companyLine1": "street address",
+  "companyCity": "city",
+  "companyZip": "valid zip", 
+  "companyState": "WA",
+  "campaignId": "2"
 }
+
 ```
 example successful response
 ```
