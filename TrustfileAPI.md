@@ -337,11 +337,29 @@ Optional Lead fields:
 example body
 ```
 {
-    "email": "ken.everett@avalara.com",
-    "firstName": "Ken",
-    "lastName": "Everett",
+    "email": "test.me@gmail.com",
+    "firstName": "Test",
+    "lastName": "Me",
     "companyName": "Best Company Ever",
-    "campaignId": 2 
+    "campaignId": "2" 
 }
 ```
+example successful response
+```
+{"status":"Success","user":{"displayName":"Test Me","id":299,"first_name":"Test","last_name":"Me","email":"test.me@gmail.com","password":"$2a$10$n9fX961STOuCIBKBIM7ru.kVzijbjVBpWotnVdPmn9g4RpYTOcrjm","token":"b5159ea8-0d9d-4d65-8649-598692743fd6","account_setup":false,"tf_admin":false,"last_login_at":"2015-09-10T17:45:05.000Z","account_created":null,"company_id":"360","tos":false,"createdAt":"2015-09-10T17:45:05.550Z","updatedAt":"2015-09-10T17:45:05.550Z","company":{"id":360,"name":"Best Company Ever2","is_fba":null,"sync_date":"2015-09-10T17:45:05.447Z","fein":null,"phone":"4258776015","fax":null,"createdAt":"2015-09-10T17:45:05.457Z","updatedAt":"2015-09-10T17:45:05.457Z"}},"notification":{"message":"Account Created.","options":{"level":"success"}}}
+```
+
+example failure response
+```
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Thu, 10 Sep 2015 17:47:29 GMT
+ETag: W/"bd-fc030302"
+X-Powered-By: Express
+Content-Length: 189
+Connection: Close
+
+{"status":"Failed","user":null,"notification":{"message":"There was a problem creating your account. Error: An account with this email address exists already.","options":{"level":"error"}}
+```
+
 
