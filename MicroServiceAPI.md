@@ -229,6 +229,7 @@ Errors look like:
 Domains: DATASOURCE, INTEGRATION, SYSTEM, ORDER
 
 ```
+{
  "errors": [error]
 }
 
@@ -256,26 +257,28 @@ Error Objects:
 	"type": "ORDER", 
 	"timestamp": "2015-07-06T22:26:28+00:00", 
 	"Company2TFToken": :token
-	"bad_orders":  [
-		" 'orderId': '3002987',
-                        'orderDate': '2014-12-09T09:53:59',
-                        'originStreet': '4077 West Clinton Avenue',
-                        'originCity': 'Fresno',
-                        'originState': 'CA',
-                        'originZip': '93722',
-                        'shippingStreet': '4077 West Clinton Avenue',
-                        'shippingCity': 'Fresno',
-                        'shippingState': 'CA',
-                        'shippingZip': '93722',
-                        'shipping': '30.00',
-                        'shippingTax': '3.29',
-                        'sales': '514.99',
-                        'salesTax': '42.36',
-                        'quantity': '1',
-                        'description': 'Feenn Ruby Brooch',
-                        'refund': false" ]
+	"bad_orders": [
+		{
+			"orderId": "3002987",
+			"orderDate": "2014-12-09T09:53:59",
+			"originStreet": "4077 West Clinton Avenue",
+			"originCity": "Fresno",
+			"originState": "CA",
+			"originZip": "93722",
+			"shippingStreet": "4077 West Clinton Avenue",
+			"shippingCity": "Fresno",
+			"shippingState": "CA",
+			"shippingZip": "93722",
+			"shipping": 30.00,
+			"shippingTax": 3.29,
+			"sales": 514.99,
+			"salesTax": 42.36,
+			"quantity": 1,
+			"description": "Feenn Ruby Brooch",
+			"refund": false
+		}],
 	"friendly_message": "missing sales",
-	"message": CASTEXCEPTION
+	"message": "bad orders"
 }
 ```
 Possible types are:
