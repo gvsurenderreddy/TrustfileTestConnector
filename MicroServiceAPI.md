@@ -115,10 +115,14 @@ Errors look like:
 }
 ```
 
-#### GET /datasources/:company_2_tf_token/authentication?redirect_uri=app.trustfile.avalara.com/datasource/:token
+#### ~~GET /datasources/:company_2_tf_token/authentication?redirect_uri=app.trustfile.avalara.com/datasource/:token~~
 
-Response will be rendored in a popup iframe to handle oAuth or other authentication mechanism. 
-After the authentication is complete, redirect to the provided redirect_uri
+~~Response will be rendored in a popup iframe to handle oAuth or other authentication mechanism. 
+After the authentication is complete, redirect to the provided redirect_uri~~
+
+### GET /datasources/:company_2_tf_token/authentication?redirect_uri=app.trustfile.avalara.com/connectors/success?id=:tf_2_connector_token?name=:connectorName
+
+Redirects user to the DataSource authentication. Response will be rendered in a popup iframe to handle oAuth or other authentication mechanism. Once the user logs in or authorizes the connector, they will be redirected to the provided redirect_uri, passing the tf_2_connector_token and name of the connector 
 
 #### PUT /datasources/:company_2_tf_token
 ```
@@ -226,15 +230,31 @@ Errors look like:
 
 ####  GET /connector/errors?date=2015-06-10T22:26:28+00:00
 
-Domains: DATASOURCE, INTEGRATION, SYSTEM, ORDER
+Possible types are:
+* SYSTEM - internal issues (out of memory, db issues..)
+* INTEGRATION - paypal throttling, timeouts/retries
+* DATASOURCE - not authorized
+* ORDER
+
+Response:
 
 ```
+Status: 200
 {
- "errors": [error]
+	"errors": [error]
 }
+
+
+Status: 500
+{
+	"status": "Error",
+	"message": "Not found"
+}
+```
 
 Error Objects:
 
+```
 {
 	"type": "INTEGRATION", 
 	"timestamp": "2015-07-06T22:26:28+00:00", 
@@ -281,8 +301,4 @@ Error Objects:
 	"message": "bad orders"
 }
 ```
-Possible types are:
-* SYSTEM - internal issues (out of memory, db issues..)
-* INTEGRATION - paypal throttling, timeouts/retries
-* DATASOURCE - not authorized
-* ORDER
+
