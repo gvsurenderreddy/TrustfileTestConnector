@@ -214,17 +214,17 @@ This allows Trustfile to enable/disable a connector.   When a connector is disab
 
 Success
 ```
+200
 {
-    "status": "success"
+    "success": true
 }
 ```
 
 Errors look like:
 ```
-500
+200
 {
-  status: 'error',
-  message: 'attribute not found.'
+    "success": false
 }
 ```
 
