@@ -120,9 +120,9 @@ Errors look like:
 ~~Response will be rendored in a popup iframe to handle oAuth or other authentication mechanism. 
 After the authentication is complete, redirect to the provided redirect_uri~~
 
-#### GET /datasources/:company_2_tf_token/authentication?redirect_uri=app.trustfile.avalara.com/connectors/success?id=:tf_2_connector_token?name=:connectorName
+#### GET /datasources/:company_2_tf_token/authentication?redirect_uri=app.trustfile.avalara.com/connectors/success?id=:tf_2_connector_token
 
-Redirects user to the DataSource authentication. Response will be rendered in a popup iframe to handle oAuth or other authentication mechanism. Once the user logs in or authorizes the connector, they will be redirected to the provided redirect_uri, passing the tf_2_connector_token and name of the connector 
+Redirects user to the DataSource authentication. Response will be rendered in a popup iframe to handle oAuth or other authentication mechanism. Once the user logs in or authorizes the connector, they will be redirected to the provided redirect_uri, passing the tf_2_connector_token
 
 #### PUT /datasources/:company_2_tf_token
 ```
